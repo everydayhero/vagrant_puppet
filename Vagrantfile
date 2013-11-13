@@ -55,7 +55,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
-  config.vm.define "vm2" do |host|
+  config.vm.define "vm2", primary: true do |host|
     config.vm.hostname = "vm2.edherox.com"
   end
 
