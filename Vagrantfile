@@ -55,12 +55,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
-  config.vm.define "vm2" do |host|
-    config.vm.hostname = "vm2.edherox.com"
-  end
+  host_names = %w(vm2 vm4 vm10 vm40)
 
-  config.vm.define "vm10" do |host|
-    config.vm.hostname = "vm10.edherox.com"
+  host_names.each do |host_name|
+    config.vm.define host_name do |host|
+      config.vm.hostname = "#{host_name}.edherox.com"
+    end
   end
 
   config.vm.provision :shell, :path => "bootstrap.sh"
