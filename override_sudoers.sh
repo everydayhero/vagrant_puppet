@@ -1,1 +1,5 @@
-ssh vagrant@localhost -p 2222 -t "sudo cp /vagrant/sudoers /etc/sudoers"
+SSH_PORT=$1
+if [ -z $SSH_PORT ]; then
+  SSH_PORT=2222
+fi
+ssh vagrant@localhost -p $SSH_PORT -t "sudo cp /vagrant/sudoers /etc/sudoers"
