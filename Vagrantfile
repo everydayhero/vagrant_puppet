@@ -60,7 +60,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
-  host_names = %w(vm2 vm4 vm6 vm10 vm40 vm46 vm44)
+  host_names = %w(vm2 vm4 vm6 vm10 vm40 vm42 vm43 vm46 vm44)
 
   host_names.each do |host_name|
     config.vm.define host_name do |host|
