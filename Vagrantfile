@@ -20,10 +20,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", disabled: true
   config.vm.network :forwarded_port,
     guest: 1022,
-    host: 2222,
-    id: "ssh",
+    host: 2223,
+    id: "ssh2",
     auto_correct: true
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -37,7 +38,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
   # config.ssh.forward_agent = true
-  config.ssh.guest_port = 1022
+  # config.ssh.guest_port = 1022
+  config.ssh.port = 2223
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
